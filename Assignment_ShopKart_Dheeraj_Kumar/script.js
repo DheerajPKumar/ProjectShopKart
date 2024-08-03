@@ -1,5 +1,5 @@
 function changeBg(event) {
-    const paginationButtons = document.querySelectorAll('.topDeals2__navigation-link');
-    paginationButtons.forEach(button => button.classList.remove('active'));
+    const activeBtn = document.querySelectorAll('.topDeals2__navigation-link');
+    activeBtn.forEach(button => button.classList.remove('active'));
     event.target.classList.add('active');
 }
