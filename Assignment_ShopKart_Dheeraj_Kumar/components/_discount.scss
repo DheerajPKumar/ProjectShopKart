@@ -1,0 +1,213 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.discount {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(30px);
+    padding: pxToRem(20px) pxToRem(40px);
+    margin-top: pxToRem(50px);
+
+    &__heading{
+        font-size: pxToRem(20px);
+        margin-top: pxToRem(30px);
+    }
+
+    &__container{
+        display: grid;
+        gap: pxToRem(20px);
+    }
+
+    &__cardC{
+        grid-template-columns: 1fr;
+        display: grid;
+        width: 100%;
+        height: auto;
+
+        &-card{
+            background-color: #4f4c4c;
+            display: flex;
+            flex-direction: column;
+            padding-top: pxToRem(10px);
+            gap: pxToRem(20px);
+            border-radius: pxToRem(10px);
+            overflow: hidden;
+        }
+
+        &-content{
+            display: flex;
+            flex-direction: column;
+            gap: pxToRem(10px);
+            padding-left: pxToRem(25px);
+            padding-top: pxToRem(20px);
+            padding-bottom: pxToRem(20px);
+        }
+
+        &-card1{
+            background-color: $linen;
+        }
+
+        &-content1{
+            &-name{
+                font-size: pxToRem(24px);
+                font-weight: 700;
+                color: $text-color;
+            }
+
+            &-desc1{
+                font-size: pxToRem(44px);
+                line-height: pxToRem(48px);
+                color: $card-color;
+                font-weight: bolder;
+
+                sup{
+                    padding-top: pxToRem(20px);
+                    font-size: pxToRem(28px);
+                    color: $card-color;
+                }
+            }
+
+            &-desc2{
+                font-size: pxToRem(16px);
+                color: $heading-color;
+                font-weight: 500;
+                padding-top: pxToRem(20px);
+            }
+        }
+        
+        &-card2{
+            background-color: $misty-rose;
+        }
+
+        &-content2{
+            &-name{
+                font-size: 24px;
+                font-weight: 700;
+                color: $text-color;
+            }
+
+            &-desc1{
+                font-size: pxToRem(44px);
+                line-height: pxToRem(48px);
+                color: $card2-color;
+                font-weight: bolder;
+
+                sup{
+                    padding-top: pxToRem(20px);
+                    font-size: pxToRem(28px);
+                    color: $card2-color;
+                }
+            }
+
+            &-desc2{
+                font-size: pxToRem(16px);
+                color: $heading-color;
+                font-weight: 500;
+                padding-top: pxToRem(20px);
+            }
+        }
+
+        &-card3{
+            background-color: $linen;
+        }
+
+        &-content3{
+            &-name{
+                font-size: 24px;
+                font-weight: 700;
+                color: $heading-color;
+            }
+
+            &-desc1{
+                font-size: pxToRem(44px);
+                line-height: pxToRem(48px);
+                color: $card3-color;
+                font-weight: bolder;
+
+                sup{
+                    padding-top: pxToRem(20px);
+                    font-size: pxToRem(28px);
+                    color: $card3-color;
+                }
+            }
+
+            &-desc2{
+                font-size: pxToRem(16px);
+                color: $heading-color;
+                font-weight: 500;
+                padding-top: pxToRem(20px);
+            }
+        }
+
+        &-card4{
+            background-color: $card4-color;
+        }
+
+        &-content4{
+            &-name{
+                font-size: 24px;
+                font-weight: 700;
+                color: $heading-color;
+            }
+
+            &-desc1{
+                font-size: pxToRem(44px);
+                line-height: pxToRem(48px);
+                color: $primary-color;
+                font-weight: bolder;
+
+                sup{
+                    padding-top: pxToRem(20px);
+                    font-size: pxToRem(28px);
+                    color: $primary-color;
+                }
+            }
+
+            &-desc2{
+                font-size: pxToRem(16px);
+                color: $heading-color;
+                font-weight: 500;
+                padding-top: pxToRem(20px);
+            }
+        }
+
+        &-image{
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            z-index: 1;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            overflow: hidden;
+            object-fit: cover;
+
+            &:hover{
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
+}
+
+@media (max-width: 490px){
+    .discount{
+        padding: pxToRem(10px) pxToRem(15px); 
+    }
+}
+
+@media (min-width: 490px) and (max-width: 990px) {
+    .discount{
+        padding: pxToRem(10px) pxToRem(15px); 
+    }
+
+    .discount__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 990px) {
+    .discount__container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+

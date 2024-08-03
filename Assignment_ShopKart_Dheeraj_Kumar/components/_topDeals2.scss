@@ -1,0 +1,180 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.topDeals2{
+    display: flex;
+    flex-direction: column;
+    padding: pxToRem(20px) pxToRem(40px);
+    gap: pxToRem(48px);
+
+    &__heading{
+        &-title{
+            font-size: pxToRem(32px);
+        }
+    }
+
+    &__navigation{
+        display: flex;
+        flex-wrap: wrap;
+        gap: pxToRem(20px);
+        
+        &-link{
+            text-decoration: none;
+            color: $black-color;
+            border: 1px solid #c5c5c5;
+            padding: pxToRem(12px) pxToRem(20px);
+            border-radius: pxToRem(25px);
+
+            &.active{
+                background-color: $primary-color;
+                color:$white-color;
+            }
+        }
+    }
+
+    &__cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: pxToRem(20px);
+
+        &-card{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: pxToRem(20px);
+        }
+
+        &-imgC{
+            background-color: rgb(233, 238, 222);
+            border-radius: pxToRem(20px);
+            position: relative;
+        }
+
+        &-img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            overflow: hidden;
+            object-fit: cover;
+
+            &:hover{
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        &-icon{
+            position: absolute;
+            left: 75%;
+            top: 8%;
+            background-color: $white-color;
+            z-index: 10;
+            height: 40px;
+            width: 40px;
+            @include flexCenterCenter;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+
+            &:hover{
+                background-color: $misty-rose;
+            }
+        }
+
+        &-content{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: pxToRem(10px);
+        }
+
+        &-one{
+            @include flexCenterBetween;
+        }
+
+        &-name{
+            font-size: pxToRem(18px);
+        }
+
+        &-price{
+            font-size: pxToRem(18px);
+            font-weight: 600;
+        }
+
+        &-desc{
+            font-size: pxToRem(14px);
+            color: $black-color;
+        }
+
+        &-star{
+            font-size: pxToRem(18px);
+            color: $green-color;
+        }
+
+        &-btn{
+            color: $black-color;
+            padding: pxToRem(10px) pxToRem(25px);
+            border: 1px solid $black-color;
+            border-radius: pxToRem(20px);
+            outline: none;
+            cursor: pointer;
+            background-color: transparent;
+            margin-bottom: pxToRem(40px);
+            transition: background-color 0.3s ease;
+
+            &:hover{
+                background-color: $primary-color;
+                color: $white-color;
+            }
+        }
+
+        &-dragger{
+            width: pxToRem(80px);
+            height: pxToRem(80px);
+            @include flexCenterCenter;
+            border-radius: 50%;
+            border: pxToRem(2px) solid $black-color;
+            background-color: transparent;
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 990px){
+    .topDeals2{
+        padding: pxToRem(10px) pxToRem(15px);
+        
+        &__cards{
+            grid-template-columns: 1fr 1fr;
+        }
+    }   
+}
+
+@media (max-width: 490px){
+    .topDeals2{
+        padding: pxToRem(10px) pxToRem(15px);
+
+        &__cards{
+            &-icon{
+                left: 70%;
+            }
+
+            &-name{
+                font-size: pxToRem(16px);
+            }
+    
+            &-price{
+                font-size: pxToRem(16px);
+                font-weight: 600;
+            }
+    
+            &-desc{
+                font-size: pxToRem(12px);
+                color: black;
+            }
+        }
+    }   
+}

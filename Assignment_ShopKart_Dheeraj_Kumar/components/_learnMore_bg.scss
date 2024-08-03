@@ -1,0 +1,92 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.learnMore{
+    margin: pxToRem(60px) 0;
+    width: 100%;
+    position: relative;
+    margin-top: pxToRem(80px);
+
+    &__bg{
+        position: relative;
+
+        &-image{
+            width: 100%;
+            height: pxToRem(600px);
+            display: block;
+            object-fit: cover;
+            transition: transform 0.2s ease-out; 
+
+            &:hover{
+                transform: scale3d(1.02, 1.02, 1);
+            }
+        }
+
+        &-content{
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            background-color: $primary-color;
+            padding: pxToRem(70px) pxToRem(50px);
+            color: $white-color;
+            max-width: pxToRem(500px);
+            height: auto;
+        }
+
+        &-title{
+            font-size: pxToRem(38px);
+            font-weight: bolder;
+            max-width: pxToRem(380px);
+            margin-bottom: pxToRem(20px);
+        }
+
+        &-text{
+            font-size: pxToRem(20px);
+            max-width: pxToRem(380px);
+            line-height: 145%;
+            margin-bottom: pxToRem(20px);
+        }
+
+        &-button{
+            display: inline-block;
+            padding: pxToRem(12px) pxToRem(24px);
+            background-color: transparent;
+            border: 1px solid $white-color;
+            color: $white-color;
+            text-decoration: none;
+            border-radius: pxToRem(22px);
+            transition: background-color 0.3s ease;
+            margin-top: pxToRem(30px);
+
+            &:hover {
+                background-color: $heading-color;
+                color: $white-color;
+                border: none;
+            }
+        }
+    }
+}
+
+@media(min-width: 420px) and (max-width: 510px){
+    .learnMore {
+        &__bg{
+            &-content{
+                max-width: pxToRem(380px);
+            }
+        }
+    }
+}
+
+@media (max-width: 420px){
+    .learnMore {
+        &__bg{
+            &-content{
+                max-width: pxToRem(320px);
+                // width: 90%%;
+                padding: pxToRem(40px) pxToRem(40px);
+            }
+        }
+    }
+}

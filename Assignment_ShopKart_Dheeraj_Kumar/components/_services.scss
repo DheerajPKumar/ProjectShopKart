@@ -1,0 +1,110 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(30px);
+    margin-bottom: pxToRem(80px);
+    padding: pxToRem(20px) pxToRem(40px);
+
+    &__heading{
+        font-size: pxToRem(20px);
+        margin-top: pxToRem(30px);
+    }
+
+    &__container{
+        display: grid;
+        gap: pxToRem(20px);
+    }
+
+    &__cardC{
+        grid-template-columns: 1fr;
+        display: grid;
+        width: 100%;
+        height: auto;
+
+        &-card{
+            background-color: #f5f6f6;
+            display: flex;
+            flex-direction: column;
+            padding-top: pxToRem(10px);
+            gap: pxToRem(20px);
+            border-radius: pxToRem(10px);
+            overflow: hidden;
+        }
+
+        &-content{
+            display: flex;
+            flex-direction: column;
+            gap: pxToRem(10px);
+            padding-left: pxToRem(25px);
+            padding-top: pxToRem(20px);
+            padding-bottom: pxToRem(20px);
+
+            &-name{
+                font-size: pxToRem(22px);
+                font-weight: bold;
+                color: $heading-color;
+                font-weight: 700;
+                max-width: pxToRem(230px);
+                text-transform: capitalize;
+                margin-bottom: pxToRem(24px);
+                line-height: pxToRem(32px);
+            }
+
+            &-desc{
+                font-size: pxToRem(16px);
+                font-weight: 500;
+                color: $heading-color;
+                max-width: pxToRem(230px);
+                margin-bottom: pxToRem(24px);
+                line-height: 160%;
+            }
+        }
+
+
+        &-image{
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            z-index: 1;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            overflow: hidden;
+            object-fit: cover;
+
+            &:hover{
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
+}
+
+@media (max-width: 490px){
+    .services{
+        padding: pxToRem(10px) pxToRem(15px); 
+    }
+
+    .services__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 490px) and (max-width: 990px) {
+    .services{
+        padding: pxToRem(10px) pxToRem(15px); 
+    }
+
+    .services__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 990px) {
+    .services__container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+

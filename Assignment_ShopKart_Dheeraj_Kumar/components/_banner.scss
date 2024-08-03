@@ -1,0 +1,112 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.banner{
+    background-color: $banner-bg;
+    padding: pxToRem(50px) pxToRem(80px);
+    @include flexCenterBetween;
+    
+
+    &__content{
+        &-heading{
+            font-size: pxToRem(52px);
+            max-width: 100%;
+            text-transform: capitalize;
+            line-height: 120%;
+            font-weight: 700;
+            margin-bottom: pxToRem(20px);
+        }
+
+        &-desc{
+            font-size: pxToRem(20px);
+            line-height: 145%;
+            font-weight: 500;
+            max-width: pxToRem(385px);
+            margin-bottom: pxToRem(30px);
+        }
+
+        &-btn{
+            color: $white-color;
+            padding: pxToRem(14px) pxToRem(25px);
+            border-radius: pxToRem(24px);
+            font-size: pxToRem(18px);
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background-color: $primary-color;
+            margin-bottom: pxToRem(40px);
+
+            &:hover{
+                background-color: $heading-color;
+                color: $white-color;
+            }
+        }
+    }
+
+    &__image{
+        position: relative;
+        width: pxToRem(450px);
+        height: pxToRem(300px);
+
+        &-card{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-card img{
+            transform-origin: bottom left;
+        }
+
+        &-img1{
+            transform: rotate(0deg);
+        }
+
+        &-img2{
+            transform: rotate(-10deg);
+        }
+
+        &-img3{
+            transform: rotate(-20deg);
+        }
+    }
+}
+
+@media (max-width: 990px){
+    .banner{
+        padding: pxToRem(10px) pxToRem(15px);
+    }
+}
+
+@media (max-width: 768px){
+    .banner{
+        padding: pxToRem(50px) pxToRem(40px);
+
+        &__image{
+            display: none;
+        }
+
+        &__content{
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 490px){
+    .banner{
+
+        &__content{
+            max-width: 100%;
+
+            &-heading{
+                font-size: pxToRem(36px);
+            }
+
+            &-desc{
+                font-size: pxToRem(18px);
+            }
+        }
+    }
+}

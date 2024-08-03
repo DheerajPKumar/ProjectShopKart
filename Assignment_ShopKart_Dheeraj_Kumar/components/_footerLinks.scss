@@ -1,0 +1,106 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.footerLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: pxToRem(15px);
+    padding:pxToRem(20px) pxToRem(40px);
+    width: 100%;
+
+    &__first{
+        @include flexCenterCenter;
+        gap: pxToRem(5px);
+    }
+
+    &__one, &__two, &__three, &__four, &__five{
+        @include flexCenterCenter;
+        gap: pxToRem(5px);
+
+        img{
+            cursor: pointer;
+        }
+
+        &-para1{
+            color: $heading-color;
+            font-size: pxToRem(14px);
+            font-weight: 500;
+            line-height: 140%;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover{
+                color: $link-hover;
+            }
+        }
+
+        &-para2{
+            color: $footer-link;
+            font-size: pxToRem(13px);
+            font-weight: 500;
+            line-height: pxToRem(32px);
+            cursor: pointer;
+
+            transition: color 0.3s ease;
+
+            &:hover{
+                color: $link-hover;
+            }
+        }
+
+        &-para3{
+            color: $footer-link;
+            font-size: pxToRem(13px);
+            font-weight: 500;
+            line-height: pxToRem(32px);
+        }
+
+        &-privacy{
+            color: $footer-link;
+            font-size: pxToRem(15px);
+            font-weight: 600;
+            line-height: pxToRem(32px);
+            cursor: pointer;
+
+            transition: color 0.3s ease;
+
+            &:hover{
+                color: $link-hover;
+            }
+        }
+
+        &-span{
+            text-decoration: underline;
+            color: $upper-header-bg;
+            cursor: pointer;
+        }
+    }
+}
+
+@media(max-width: 990px){
+    .footerLinks {
+        grid-template-columns: 1fr;
+        float: left;
+        gap: pxToRem(20px);
+        padding:pxToRem(10px) pxToRem(15px);
+
+        &__four{
+            display: flex;
+            justify-content: flex-start;
+            float: left;
+        }
+
+        &__five{
+            display: flex;
+            justify-content: flex-start;
+            float: left;
+        }
+
+        &__first{
+            display: flex;
+            justify-content: flex-start;
+            float: left;
+        }
+    }
+}

@@ -1,0 +1,290 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.intro {
+    width: 100%;
+    gap: pxToRem(50px);
+    padding: 0 0;
+
+    &__bg{
+        width: 100%;
+        background-color: rgba(158, 198, 211);
+        position: relative;
+
+        &-desc{
+            position: absolute;
+            top: 60%;
+            left: 28%; 
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap: pxToRem(20px);
+        }
+
+        &-heading{
+            font-size: pxToRem(64px);
+            font-weight: 700;
+            line-height: pxToRem(74px);
+            max-width: pxToRem(600px);
+            color: $primary-color;
+        }
+
+        &-para{
+            font-size: pxToRem(18px);
+            font-weight: 400;
+            line-height: pxToRem(32px);
+            max-width: pxToRem(490px);
+            color: $heading-color;
+        }
+
+        &-btn{
+            font-size: pxToRem(18px);
+            font-weight: 400;
+            width: fit-content;
+            border: none;
+            outline: none;
+            padding: pxToRem(20px) pxToRem(36px);
+            background-color: $primary-color;
+            border-radius: pxToRem(35px);
+            color: $white-color;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+
+            &:hover{
+                background-color:$heading-color;
+            }
+        }
+
+        &-img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        &-pos1 {
+            position: absolute;
+            top: 42%; 
+            right: 42%; 
+            transform: translate(50%, -50%);
+        }
+
+        &-pos2 {
+            position: absolute;
+            top: 28%; 
+            right: 18%; 
+            transform: translate(50%, -50%);
+        }
+
+        &-pos3 {
+            position: absolute;
+            top: 70%; 
+            right: 25%; 
+            transform: translate(50%, -50%);
+        }
+
+        &-pos4 {
+            position: absolute;
+            top: 80%; 
+            right: 55%;
+            transform: translate(50%, -50%);
+        }
+    }
+}
+
+@media (max-width: 1450px){
+    .intro{
+        &__bg{
+            &-desc{
+                top: 60%;
+                left: 28%; 
+            }
+        }
+    }
+}
+
+@media (max-width: 1130px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-desc{
+                top: 60%;
+                left: 30%; 
+            }
+        }
+    }
+}
+
+@media (max-width: 990px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-pos1, &-pos2, &-pos3, &-pos4{
+                display: none;
+            }
+
+            &-heading{
+                top: 25%; 
+            }
+
+            &-desc{
+                gap: pxToRem(10px);
+                float: left;
+                top: 50%;
+                left: 35%; 
+            }
+
+            &-btn{
+                font-size: pxToRem(18px);
+                padding: pxToRem(15px) pxToRem(28px);
+            }
+
+            &-heading{
+                font-size: pxToRem(54px);
+            }
+
+            &-para{
+                font-size: pxToRem(17px);
+            }
+        }
+    }
+}
+
+@media (max-width: 690px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-desc{
+                gap: pxToRem(15px);
+                top: 50%;
+                left: 35%; 
+            }
+
+            &-btn{
+                font-size: pxToRem(14px);
+                padding: pxToRem(12px) pxToRem(22px);
+            }
+
+            &-heading{
+                font-size: pxToRem(45px);
+                line-height: pxToRem(60px);
+            }
+
+            &-para{
+                font-size: pxToRem(18px);
+            }
+        }
+    }
+}
+
+@media (max-width: 650px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-desc{
+                gap: pxToRem(25px);
+                top: 50%;
+                left: 35%; 
+            }
+
+            &-btn{
+                font-size: pxToRem(14px);
+                padding: pxToRem(12px) pxToRem(22px);
+            }
+
+            &-heading{
+                font-size: pxToRem(40px);
+                line-height: pxToRem(40px);
+            }
+
+            &-para{
+                font-size: pxToRem(16px);
+                line-height: pxToRem(20px);
+            }
+        }
+    }
+}
+
+@media (max-width: 510px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-desc{
+                gap: pxToRem(20px);
+                top: 50%;
+                left: 35%; 
+            }
+
+            &-btn{
+                font-size: pxToRem(14px);
+                padding: pxToRem(10px) pxToRem(18px);
+            }
+
+            &-heading{
+                font-size: pxToRem(35px);
+                line-height: pxToRem(40px);
+            }
+
+            &-para{
+                font-size: pxToRem(15px);
+                line-height: pxToRem(20px);
+            }
+        }
+    }
+}
+
+@media (max-width: 470px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-desc{
+                gap: pxToRem(20px);
+                top: 50%;
+                left: 35%; 
+            }
+
+            &-btn{
+                font-size: pxToRem(14px);
+                padding: pxToRem(8px) pxToRem(15px);
+            }
+
+            &-heading{
+                font-size: pxToRem(28px);
+                line-height: pxToRem(30px);
+            }
+
+            &-para{
+                font-size: pxToRem(16px);
+                line-height: pxToRem(18px);
+            }
+        }
+    }
+}
+
+@media (max-width: 410px){
+    .intro{
+        &__bg{
+            padding: pxToRem(40px) pxToRem(10px);
+            &-desc{
+                gap: pxToRem(20px);
+                top: 50%;
+                left: 35%; 
+            }
+
+            &-btn{
+                font-size: pxToRem(14px);
+                padding: pxToRem(8px) pxToRem(15px);
+            }
+
+            &-heading{
+                font-size: pxToRem(24px);
+                line-height: pxToRem(25px);
+            }
+
+            &-para{
+                font-size: pxToRem(14px);
+                line-height: pxToRem(14px);
+            }
+        }
+    }
+}

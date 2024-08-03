@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "./components/upper_header";
+@import "./components/navbar";
+@import "./components/intro";
+@import "./components/topCat";
+@import "./components/topDeals";
+@import "./components/brand";
+@import "./components/discount";
+@import "./components/learnMore_bg";
+@import "./components/topDeals2";
+@import "./components/banner";
+@import "./components/trending";
+@import "./components/selling";
+@import "./components/services";
+@import "./components/borderBetween";
+@import "./components/footer";
+@import "./components/footerLinks";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.container{
+    width: 100%;
+}

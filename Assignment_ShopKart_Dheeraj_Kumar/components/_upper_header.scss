@@ -1,0 +1,95 @@
+@import "./functions";
+@import "./color-vars";
+@import "./mixins";
+
+.container{
+    font-family: Inter, sans-serif;
+
+    &__upHeader{
+        width: 100%;
+        height: auto;
+        background-color: $upper-header-bg;
+        @include flexCenterBetween;
+        padding: pxToRem(10px) pxToRem(40px);
+    }
+
+    &__upHeader-1{
+        font-size: pxToRem(12px);
+        color: $white-color;
+        line-height: pxToRem(16px);
+        @include flexCenterCenter;
+        gap: pxToRem(8px);
+    }
+
+    &__upHeader-2{
+        font-size: pxToRem(12px);
+        color: $white-color;
+        cursor: pointer;
+        display: flex;
+        gap: pxToRem(24px); 
+        line-height: pxToRem(16px);
+    }
+
+    &__upHeader-3{
+        color: $white-color;
+        display: flex;
+        font-size: pxToRem(12px);
+        gap: pxToRem(18px);
+        cursor: pointer;
+        line-height: pxToRem(16px);
+    }
+
+    &__upHeader-first, &__upHeader-second{
+        @include flexCenterCenter;
+        gap: pxToRem(24px);
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        &__upHeader{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(4px); 
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .container{
+        &__upHeader{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: pxToRem(4px); 
+            padding: pxToRem(15px) pxToRem(40px);
+        }
+
+        &__upHeader-2{
+            display: none;
+            // gap: pxToRem(20px);
+           
+        }
+
+        &__upHeader-3{
+            gap: pxToRem(48px);
+            padding-top: pxToRem(15px);
+            line-height: pxToRem(12px);
+            
+        }
+
+        &__upHeader-1{
+            line-height: pxToRem(12px);
+            
+        }
+
+        &__upHeader-first, &__upHeader-second{
+            gap: pxToRem(20px);
+        }
+    }
+}
+
+
